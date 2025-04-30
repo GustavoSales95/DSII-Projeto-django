@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+  color: aliceblue;
+}
+img {
+  width: 300px;
+}
+.lista_filmes {
+  display: flex;
+}
+.filme {
+  border: 1px solid #fff;
+  text-align: center;
+  margin: 5px 5px;
+}
+.filme:hover {
+  border: 1px solid deepskyblue;
+}
