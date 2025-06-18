@@ -9,13 +9,20 @@
   </head>
   <body>
     <h1>Lista de filmes</h1>
-    <div class="lista_filmes">
+    <a href="{% url 'criar_filme'%}">Novo Filme</a>
+    <ul>
       {%for filme in filmes %}
-      <div class="filme">
+      <li>
+        <strong>{{filme.titulo}}</strong>{{filme.ano}} - {{filme.genero}}
+        <br />
         <img src="{{filme.capa}}" />
-        <p>{{filme.titulo}} ({{filme.ano}})</p>
-      </div>
+        <br />
+        <a href="{% url 'atualizar_filme' filme.pk%}">Editar</a>
+        <a href="{% url 'deletar_filme' filme.pk%}">Excluir</a>
+      </li>
+      {%empty%}
+      <li>Nenhum filme cadastrado.</li>
       {%endfor%}
-    </div>
+    </ul>
   </body>
 </html>
